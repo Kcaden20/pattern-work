@@ -1,0 +1,36 @@
+body
+{height:600px;
+    width:500px;
+}
+.imagewrap {position:absolute;
+    margin:0px;
+    padding:0px;
+    top:-10px;
+    left:-10px;
+    z-index:2;
+    width:1200px;
+}
+
+.pattern {background-color:royalblue;
+    width:1010px;
+    height:60px;
+    margin-bottom:40px;
+    z-index:2;
+    opacity:.5;}
+
+.body{background-color:goldenrod;
+    height:600px;
+    width:1000px;
+    position:absolute;
+    opacity:.8;
+    top:-5px;
+    left:0px;}
+.circle {border:20px dashed; color:white;
+        border-radius:80px;
+        height:100px;
+        opacity:.85;
+        width:100px;
+        position:relative;
+        top:-600px;
+        left:-50px;
+        float:left;
