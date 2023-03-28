@@ -1,0 +1,36 @@
+:root {
+  --diamondSize: 300px;
+
+}
+
+body {
+  background-color: black;
+  overflow: hidden;
+}
+
+.diamonds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.diamond {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 0;
+    /* border-top: 100px solid lightgreen; */
+    border-right: 100px solid transparent;
+    border-bottom: 80px solid hotpink;
+    border-left: 100px solid transparent;
+    margin-bottom: var(--diamondSize);
+  }
+  
+.diamond:after {
+    content: "";
+    position: absolute;
+    border-top: var(--diamondSize) solid hotpink;
+    border-right: 200px solid transparent;
+    border-left: 200px solid transparent;
+    transform: translateX(-100px) translateY(80px);
+  }
