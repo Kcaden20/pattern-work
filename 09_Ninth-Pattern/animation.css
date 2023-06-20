@@ -1,0 +1,49 @@
+/* For Circle */
+@keyframes slide {
+    from {
+        transform: translateX(0%)
+    }
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+/* For Body AND Circles */
+@keyframes shift-color {
+    0% {
+        background-color: yellow 
+    }
+    25% {
+        background-color: red 
+    }
+    50% {
+        background-color: blue 
+    }
+    75% {
+        background-color: green 
+    }
+    100% {
+        background-color: yellow 
+    }
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(45deg);
+    }
+    
+    to {
+        transform: rotate(135deg);;
+    }
+}
+
+@keyframes front {
+    0% {
+        z-index: -1;
+    }
+    
+    100% {
+        z-index: 1;
+    }
+}

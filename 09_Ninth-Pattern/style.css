@@ -1,0 +1,34 @@
+
+ 
+body {
+    width: 100vw;
+    background-color: yellow;
+    animation: 1.5s ease-in 1s infinite shift-color;
+
+}
+.circle {
+    background-color: blue;
+    height: 50px;
+    width: 50px; 
+    border-radius: 25px;
+    animation: 3s ease-in 1s infinite slide, 1.5s ease-in 1s infinite reverse shift-color;
+
+}
+
+.triangle {
+    width: 200px;
+    height: 200px;
+    background-color: FloralWhite;
+    position: absolute;
+    left: calc(50% - 100px);
+    top:  calc(50% - 100px);
+    z-index: -1;
+    animation: 1.5s ease-in 1s infinite rotate, 3s alternate infinite front;
+}
+
+#circles {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
