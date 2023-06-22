@@ -1,11 +1,12 @@
 body{
-    background: #131416;
+    background: black;
   }
 
   /* Grid */
   .web-line {
     display:grid; 
     grid-template-columns: repeat(4, 1fr);
+    align-items: center;
   }
 
   
@@ -13,8 +14,10 @@ body{
   .box-canvas{
     position: relative;
     display: block;
-    width: 325åpx;
+    width: 325px;
     height:350px;
+    justify-self: center;
+    transform: rotate(90deg);
   }
   
   .inner {
