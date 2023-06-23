@@ -78,3 +78,36 @@ footer .icon {
 .two-twenty-three {
     background-color: greenyellow
 }
+
+@media (max-width: 480px) {
+    header {
+        border-radius: 0% 0% 50% 50%;
+    }
+
+    main section {
+        border-radius: 0% 25% 25% 0;
+    }
+
+    footer {
+        border-radius: 25% 25% 0% 0%;
+    }
+
+    header p {
+        padding: 0em 1em
+    }
+
+    p, li, h3 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-style: bold;
+    }
+    header p:last-of-type {
+        padding-bottom: 2em;
+    }
+    ul {
+        padding-right: 2em;
+    }
+ 
+}

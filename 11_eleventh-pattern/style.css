@@ -1,0 +1,51 @@
+/* Elements */
+body {
+    overflow: hidden !important;
+    background-color: white;
+    margin: 0;
+}
+
+main {
+    margin: 0 auto;
+    animation: 10s infinite alternate width-change;
+    background-color: black;
+    padding: 2em;
+    overflow: hidden;
+
+}
+section div {
+    height: 150px; 
+    display: inline-block;
+}
+section div:nth-child(even){
+    background-color: green;
+    border-radius: 0% 0% 50% 50%;
+    animation: 4s linear infinite alternate br-top-bottom
+}
+
+section div:nth-child(odd) {
+    background-color: red;
+    border-radius: 50% 50% 0% 0%;
+    animation: 2s linear infinite alternate-reverse br-top-bottom
+}
+
+/* Class */
+.line {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(10, 1fr);
+    margin: 10px 0;
+}
+
+.symbol {
+    width: 5vw;
+    height: 5vw;
+    background-color: black;
+    /* box-shadow: 1px 1px 20px 2px white; */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: 20s infinite alternate move-around
+}
