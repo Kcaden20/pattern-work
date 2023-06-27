@@ -1,0 +1,40 @@
+@keyframes circle {
+    0% {
+        box-shadow: var(--crescent);
+    }
+
+    25% {
+        box-shadow: 0 4px 0 2px var(--light-color) ;
+    }
+
+    50% {
+        box-shadow: -4px 0 2px var(--light-color);
+    }
+
+    75% {
+        box-shadow: 0 -4px 0 2px var(--light-color) ;
+    }
+
+    100% {
+        box-shadow: var(--crescent);
+    }
+}
+
+@keyframes blink {
+    from {
+        background-color: var(--mid-color);
+    }
+
+    to {
+        background-color: var(--dark-color);
+    }
+}
+
+.dual-crescent div {
+    animation: 1s var(--ease-iteration) circle;
+}
+
+.dual-crescent div div div {
+    animation: .25s var(--ease-iteration) blink; 
+}
+

@@ -1,0 +1,72 @@
+/* Color Scheme */
+:root {
+    /* GRAYISH LAVENDER */
+    --light-color: #B8B8FF;
+
+    /* Continga Purple */
+    --dark-color: #340059  ;
+
+    /* ACONITE VIOLET */
+    --mid-color: #9C52F2;
+
+    /* CARMINE */
+    --accent-color: #A10B2B;
+
+    /* CRESCENT DESIGN */
+    --crescent: none;
+    --width-height: 150px;
+    --mirror: scale(-1, 1);
+    --ease-iteration: linear infinite; 
+}
+
+body {
+    background-color: var(--dark-color);
+    overflow: hidden;
+}
+
+.background {
+    display: grid;
+    grid-template-columns: repeat(6, calc(var(--width-height) * 2));
+    grid-gap: 10px;
+    justify-self: center;
+    align-self: center;
+}
+.dual-crescent {
+    display: grid;
+    grid-template-columns: repeat(2, var(--width-height));
+
+}
+.dual-crescent div, .dual-crescent div div {
+    width: var(--width-height);
+    height: var(--width-height); 
+    box-shadow: var(--crescent) ;
+    border-radius: 50%;
+}
+
+.dual-crescent div:nth-child(2) {
+    -moz-transform: var(--mirror);
+    -webkit-transform: var(--mirror);
+    -o-transform: var(--mirror);
+    -ms-transform: var(--mirror);
+    transform: var(--mirror);
+    margin-left: 5px;
+}
+
+.dual-crescent div div, .dual-crescent div div div {
+    height: 50%;
+    width: 50%;
+    position: relative;
+
+    /* Centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.dual-crescent div div div {
+    background-color: white;
+    box-shadow: none !important;
+}   
+
+
