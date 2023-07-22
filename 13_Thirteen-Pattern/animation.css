@@ -1,0 +1,35 @@
+@keyframes eyeball {
+    from {
+        transform: rotate(42deg);
+    }
+
+    to {
+        transform: rotate(588deg);
+    }
+}
+
+@keyframes centOver {
+    0%, 75%, 100%{
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 25%;
+        height: 25%;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(405deg);
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@keyframes show {
+    to {
+        visibility: visible;
+    }
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
