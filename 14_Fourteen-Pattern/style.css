@@ -1,0 +1,101 @@
+:root {
+    --priColor: red;
+    --secColor: blue;
+    --triColor: green; 
+    --quadColor: yellow;
+    --wh: 100px; 
+    --priBorderStyle:  2px solid var(--priColor);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+
+/* Compound CSS Styles */
+.fi-pattern, .fi-pattern + section {
+    width: var(--wh);
+    height: var(--wh);
+}
+
+.fi-pattern, .fi-pattern .internal {
+    border: var(--priBorderStyle);
+}
+
+/* First Pattern */
+.fi-wrap {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+}
+.fi-pattern {
+    transform: rotate(45deg);
+    position: relative;
+    background-color: black;
+    z-index: 1;
+}
+
+.fi-pattern .internal, .fi-pattern + section section  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fi-pattern .internal {
+    height: 75%;
+    width: 75%;
+    animation: 10s infinite ease-in-out alternate grow;
+}
+
+.fi-pattern + section {
+    background-color: black;
+    border: 2px solid var(--quadColor);
+    position: relative;
+}
+
+.fi-pattern + section, .fi-pattern + section section {
+    border-radius: var(--wh);
+}
+
+.fi-pattern + section section {
+     animation: 30s infinite ease-in-out alternate sway;
+}
+
+.internal .center {
+    background-color: white;
+    animation: 20s infinite alternate shrink;
+}
+
+.internal .internal, .fi-pattern + section section {
+    height: 50%;
+    width: 50%;
+}
+
+.fi-pattern + section section {
+    background-color: var(--quadColor);
+    border: var(--priBorderStyle);
+}
+/* Second Pattern */
+.sec-wrap {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+}
+.sec-pattern {
+    height: 100%;
+    width: 50px; 
+    background-color: var(--secColor);
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.sec-pattern section {
+    height: calc(var(--wh) / 10);
+    width: 100%; 
+    background-color: black;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
