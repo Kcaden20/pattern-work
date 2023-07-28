@@ -1,0 +1,71 @@
+@keyframes spin {
+0% {
+        transform: rotateY(360deg);
+    }
+    50% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+    
+}
+
+@keyframes centerShift {
+    0%, 100% {
+        background-color: var(--triColor);
+    }
+
+    25% {
+        background-color: var(--priColor);
+    }
+
+    50% {
+        background-color: var(--secColor);
+    }
+
+    75% {
+        background-color: var(--quadColor);
+    }
+}
+
+@keyframes lineShift {
+    0%, 100% {
+        background-image:
+        linear-gradient(to right, var(--triColor) 5px, transparent 5px),
+        linear-gradient(to bottom,var(--triColor) 5px, transparent 5px);
+    }
+
+    25% {
+        background-image:
+        linear-gradient(to right, var(--quadColor) 5px, transparent 5px),
+        linear-gradient(to bottom,var(--quadColor) 5px, transparent 5px);
+    }
+
+    50% {
+        background-image:
+        linear-gradient(to right, var(--priColor) 5px, transparent 5px),
+        linear-gradient(to bottom,var(--priColor) 5px, transparent 5px);
+    }
+
+    75% {
+        background-image:
+        linear-gradient(to right, var(--secColor) 5px, transparent 5px),
+        linear-gradient(to bottom,var(--secColor) 5px, transparent 5px);
+    }
+    
+}
+
+@keyframes spin-delay {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}

@@ -1,0 +1,120 @@
+:root {
+    --priColor: orange;
+    --secColor: #148E88;
+    --triColor: #f59994;
+    --quadColor: black;
+    --diamond-top: 50px;
+    --diamond-hw: 50px;
+    --center-hw: 20px;
+    --timeRelation: 2s;
+    --lineRelation: 1px;
+
+}
+body {
+    overflow: hidden;
+    margin: -50px;
+    background-size: 20px 20px;
+    background-image:
+        linear-gradient(to right, var(--triColor) var(--lineRelation), transparent var(--lineRelation)),
+        linear-gradient(to bottom,var(--triColor) var(--lineRelation), transparent var(--lineRelation));
+}
+.diamond-wrap {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-auto-rows: 130px;
+}
+.diamond {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    position: relative;
+    /* box-shadow: 0px 0px 0px 20px var(--triColor); */
+}
+
+.middle-piece, .black {
+    width: 0;
+    height: 0;
+    border: var(--diamond-hw) solid transparent;
+    border-bottom: var(--diamond-top) solid var(--priColor);
+    position: relative;
+    top: calc(var(--diamond-hw) * -1);
+}
+  .middle-piece:after, .black::after {
+    content: '';
+    position: absolute;
+    left: calc(var(--diamond-hw) * -1);
+    top: var(--diamond-top);
+    width: 0;
+    height: 0;
+    border: var(--diamond-hw) solid transparent;
+    border-top: calc(var(--diamond-hw) * 1.6) solid var(--priColor);
+  }
+
+  .black {
+    border-bottom: var(--diamond-top) solid var(--triColor);
+    position: absolute;
+    left: 29%;
+    z-index: -1;
+    top: calc((var(--diamond-hw) * -1) - -70);
+  }
+
+  .black:after {
+    border-top: calc(var(--diamond-hw) * 1.6) solid var(--secColor) !important;
+  }
+
+  .center {
+    height: var(--center-hw);
+    width: var(--center-hw);
+    border: 10px solid var(--secColor);
+    background-color: var(--triColor);
+    border-radius: var(--center-hw);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 90%);
+    z-index: 1;
+    box-shadow: 0px 0px 0px 5px var(--triColor);
+}
+
+  .black .center {
+    border-color: var(--triColor);
+  }
+
+  .right-piece {
+    height: calc(var(--center-hw) / 2);
+    width: calc(var(--center-hw) * 2);
+    background-color: var(--quadColor);
+    border-radius: var(--center-hw);
+}
+
+.diamond:nth-child(odd) .middle-piece  {
+    animation: var(--timeRelation) infinite spin;
+}
+
+.diamond:nth-child(even) .middle-piece {
+    animation: var(--timeRelation) infinite spin-delay;
+    border-bottom-color: var(--secColor);
+} 
+
+.diamond:nth-child(even) .middle-piece::after {
+    border-top-color: var(--secColor);
+} 
+
+.diamond:nth-child(even) .middle-piece .center {
+    border-color: var(--quadColor);
+}
+
+.diamond:nth-child(even) .black {
+    display: none;
+}
+
+.diamond:nth-child(odd) .middle-piece .center {
+    animation: calc(var(--timeRelation) * 2) steps(1, end) infinite centerShift;
+}
+
+.diamond:nth-child(even) .middle-piece .center, .right-piece {
+    animation: calc(var(--timeRelation) * 2) steps(1, end) var(--timeRelation) infinite centerShift;
+}
+
+body {
+    animation: calc(var(--timeRelation) * 2) steps(1, end) infinite centerShift, calc(var(--timeRelation) * 2) steps(1, end) infinite lineShift;
+}
