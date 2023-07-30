@@ -1,0 +1,112 @@
+:root {
+    /* Color Scheme */
+    --priColor: #562151;
+    --secColor: #fb8987;
+    --triColor: #d7713b;
+    --quadColor: #fbb95d;
+    --quintColor: #ffe9ca; 
+
+    /* Relations */
+    --timeRel: ;
+    --sizeRel: 100px; 
+    --angleRel: 42px; 
+    --borderRel: 27px;
+}
+
+body { 
+    background-color: var(--quintColor);
+    margin: 0 -50px -40px 0;
+    overflow: hidden;
+}
+
+/* FIRST MODULE */
+.f-mod, .s-mod {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+}
+
+.f-mod {
+    grid-gap: 5px;
+}
+
+.f-two-bit {
+    width: var(--sizeRel);
+    height: var(--sizeRel);
+    background: var(--priColor);
+    position: relative;
+    transform: rotate(90deg);
+    display: grid;
+  }
+  .f-two-bit:before {
+    content: "";
+    width: calc(var(--sizeRel) / 2);
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: var(--borderRel) solid var(--triColor);
+    border-left: var(--borderRel) solid var(--quintColor);
+    border-right: var(--borderRel) solid var(--quintColor);
+  }
+  .f-two-bit:after {
+    content: "";
+    width: calc(var(--sizeRel) / 2);
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: var(--borderRel) solid var(--triColor);
+    border-left: var(--borderRel) solid var(--quintColor);
+    border-right: var(--borderRel) solid var(--quintColor);
+  }
+
+  .f-two-bit:after, .f-two-bit:before {
+    z-index: -1;
+  }
+
+  .center {
+    width: calc(var(--sizeRel) / 2);
+    height: calc(var(--sizeRel) / 2);
+    background-color: var(--secColor);
+    border-radius: calc(var(--sizeRel) / 2);
+    position: absolute;
+    border: 10px solid var(--quadColor);
+    box-shadow: 0 0 0 5px var(--triColor);    
+    display: grid;
+  }
+
+  .core {
+    width: calc(var(--sizeRel) / 4);
+    height: calc(var(--sizeRel) / 4);
+    box-shadow: 3px 0px 0px 3px var(--quintColor);
+    border-radius:  calc(var(--sizeRel) / 4);
+    margin-left: -5px;
+  }
+
+  .center, .core {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .core {
+    background-color: var(--priColor);
+  }
+
+  /* SECOND MODULE */
+  .s-mod {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    grid-gap: 75px 80px;
+    margin-left: -15px;
+  }
+  
+  .s-piece {
+    width: 15px;
+    height: 15px;
+    border: 5px solid var(--priColor);
+    background-color: var(--secColor);
+    transform: rotate(45deg);
+  }
+
+
