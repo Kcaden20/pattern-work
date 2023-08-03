@@ -19,14 +19,28 @@ body {
     overflow: hidden;
 }
 
+/* TOP GRID */
+.top-grid {
+  display: grid;
+  grid-template-areas: "overlay";
+}
+
+.f-mod, .s-mod {
+  grid-area: overlay;
+}
+
 /* FIRST MODULE */
 .f-mod, .s-mod {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+
 }
 
+
 .f-mod {
-    grid-gap: 5px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-template-rows: repeat(auto-fit, 100px);
+    grid-gap: 0px 5px;
 }
 
 .f-two-bit {
@@ -94,11 +108,10 @@ body {
 
   /* SECOND MODULE */
   .s-mod {
-    position: absolute;
-    top: -10px;
-    left: 0px;
-    grid-gap: 75px 80px;
-    margin-left: -15px;
+    grid-template-columns: repeat(auto-fit, 20px);
+    grid-template-rows: repeat(auto-fit, 20px);
+    margin: -11px 0px 0px -15px;
+    grid-gap: 80px 85px;
   }
   
   .s-piece {
