@@ -22,6 +22,7 @@ var onresize = function() {
     width = document.body.clientWidth;
     height = document.body.clientHeight;
 
+    // Figure out how to deal with a case of growing height
     if(width >= 1400 && fModule[0].childElementCount < 1000) {
         for(let i = 0; i <= 10; i++) {
             let newF = fPiece.cloneNode(true);
